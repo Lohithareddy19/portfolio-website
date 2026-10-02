@@ -1,0 +1,56 @@
+/* Mobile-first styles; Bootstrap provides the base */
+:root {
+  --accent: #2f45c5;
+  --accent-dark: #22338f;
+  --bs-primary: var(--accent);
+  --bs-primary-rgb: 47, 69, 197;
+  --bs-link-color: var(--accent);
+  --bs-link-hover-color: var(--accent-dark);
+}
+[data-bs-theme="dark"] {
+  --accent: #8fa2ff;
+  --accent-dark: #b4c0ff;
+  --bs-primary-rgb: 143, 162, 255;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { font-family: "Manrope", system-ui, sans-serif; padding-top: 3.5rem; line-height: 1.65; }
+h1, h2, h3, h4 { letter-spacing: -0.01em; }
+h2 { font-weight: 800; }
+section { scroll-margin-top: 4rem; }
+
+.btn-primary {
+  --bs-btn-bg: var(--accent); --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: var(--accent-dark); --bs-btn-hover-border-color: var(--accent-dark);
+  --bs-btn-active-bg: var(--accent-dark);
+}
+[data-bs-theme="dark"] .btn-primary { --bs-btn-color: #0f1535; --bs-btn-hover-color: #0f1535; }
+.btn-outline-primary {
+  --bs-btn-color: var(--accent); --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-bg: var(--accent); --bs-btn-active-bg: var(--accent);
+}
+[data-bs-theme="dark"] .btn-outline-primary { --bs-btn-hover-color: #0f1535; --bs-btn-active-color: #0f1535; }
+.text-accent { color: var(--accent); }
+
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.hero { min-height: calc(100vh - 3.5rem); padding: 3rem 0; }
+.profile-img { max-width: 200px; border-radius: 50%; }
+.typed-line { font-size: 1.15rem; min-height: 1.8rem; }
+
+.skill-card, .project-card { transition: transform .2s ease, box-shadow .2s ease; }
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.12); }
+.tag { font-size: .8rem; }
+
+@media (min-width: 768px) {
+  .profile-img { max-width: 260px; }
+  body { padding-top: 4rem; }
+  .hero { min-height: calc(100vh - 4rem); }
+}
+@media (min-width: 992px) {
+  .hero { padding: 4rem 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
